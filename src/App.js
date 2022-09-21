@@ -30,15 +30,12 @@ function App() {
     <div>
       <h1>{r_number}</h1>
       <button onClick={randomInteger}>Generate</button>
-      <ErrorBoundary
-        FallbackComponent={ErrorFallback}
-        onReset={() =>
-          setR_number("press button to generate random from 1 to 20")
-        }
-      >
-        {r_number < 5 ? <GenerateRandomNumber number={r_number} /> : <></>}
+      
+      <ErrorBoundary FallbackComponent={ErrorFallback} onReset={() => setR_number("press button to generate random from 1 to 20")}>
 
-        <GenerateRandomNumber number={r_number} />
+      {/* {r_number < 5 ? <GenerateRandomNumber number={r_number} /> : <></>} */}
+
+      <GenerateRandomNumber number={r_number} />
       </ErrorBoundary>
     </div>
   );
